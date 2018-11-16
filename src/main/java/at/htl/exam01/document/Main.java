@@ -51,7 +51,7 @@ public class Main {
 
         System.out.println("Email: ");
         System.out.println("=======");
-        System.out.printf("Name des Empföngers: ");
+        System.out.printf("Name des Empfängers: ");
         Email.setTo(scanner.next());
         System.out.printf("Betreff: ");
         Email.setSubject(scanner.next());

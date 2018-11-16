@@ -80,6 +80,7 @@ public class StringCompress {
      * @param fileName
      * @return Anzahl der Zeilen in der Textdatei
      */
+
     public int getNoOfLines(String fileName) {
         int anz = 0;
 

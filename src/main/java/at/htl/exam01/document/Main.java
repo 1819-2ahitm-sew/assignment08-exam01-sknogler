@@ -27,11 +27,8 @@ public class Main {
 
         String[] strings = new String[1000];
 
-
-        do {
-            readBook(strings);
-            readEmail(strings);
-        } while (System.in != null);
+        strings[i] = readBook(strings);
+        readEmail(strings);
 
     }
 

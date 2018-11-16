@@ -1,5 +1,7 @@
 package at.htl.exam01.document;
 
+import java.util.Scanner;
+
 public class Main {
 
     /**
@@ -25,6 +27,34 @@ public class Main {
 
         String[] strings = new String[1000];
 
+
+        do {
+            readBook(strings);
+            readEmail(strings);
+        } while (System.in != null);
+
+    }
+
+    public static void readBook(String[] strings){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Buch ");
+        System.out.println("=====");
+        System.out.printf("Name des Buches: ");
+        Book.setTitle(scanner.next());
+        System.out.printf("Name des Authors: ");
+        Book.setAuthor(scanner.next());
+    }
+
+    public static void readEmail(String[] strings){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Email: ");
+        System.out.println("=======");
+        System.out.printf("Name des Empföngers: ");
+        Email.setTo(scanner.next());
+        System.out.printf("Betreff: ");
+        Email.setSubject(scanner.next());
     }
 
 }

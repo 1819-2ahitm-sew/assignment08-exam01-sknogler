@@ -16,9 +16,6 @@ public class StringCompress {
      * @param args
      */
     public static void main(String[] args) {
-        StringCompress sc = new StringCompress();
-        String[] text = sc.readFromFile(FILE_NAME);
-        sc.print(text);
     }
 
 
@@ -42,22 +39,7 @@ public class StringCompress {
      * @return String-Array mit dem entpacktem Text
      */
     public String[] readFromFile(String fileName) {
-        StringBuilder sb = new StringBuilder();
-        String[] arr = new String[getNoOfLines(fileName)];
-        int i = 0;
 
-        try (Scanner scanner = new Scanner(new FileReader(fileName))){
-            while (scanner.hasNextLine()){
-                sb.append(scanner.next());
-                sb.append("\n");
-                arr[i] = sb.toString();
-                i++;
-            }
-        } catch (FileNotFoundException e){
-            System.err.println("Error");
-        }
-
-        return arr;
     }
 
 
@@ -68,9 +50,6 @@ public class StringCompress {
      * @param lines String-Array
      */
     public void print(String[] lines) {
-        for (int i = 0; i < lines.length; i++) {
-            System.out.printf(lines[i]);
-        }
 
     }
 

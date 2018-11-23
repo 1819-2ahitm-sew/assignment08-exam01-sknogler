@@ -2,29 +2,20 @@ package at.htl.exam01.document;
 
 public class Book extends Document {
 
-    private static String title;
+    private String titel;
 
-    public Book(String title){
+    public Book(String author, String titel) {
         super(author);
-        this.title = title;
+
+        this.titel = titel;
     }
-    public Book(){
+
+    public String getTitel() {
+        return titel;
     }
 
     @Override
     public String toString() {
-        String string = "Book: "+ author + ", "+ title;
-        return string;
+        return "Book: " + titel + " von " + getAuthor();
     }
-
-    //region GETTER AND SETTER
-
-    public static String getTitle() {
-        return title;
-    }
-    public static void setTitle(String title) {
-        Book.title = title;
-    }
-
-    //endregion
 }

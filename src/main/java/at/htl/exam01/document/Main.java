@@ -1,9 +1,6 @@
 package at.htl.exam01.document;
 
-import java.util.Scanner;
-
 public class Main {
-
     /**
      *
      * Führen Sie hier folgendes durch:
@@ -25,33 +22,30 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        String[] strings = new String[1000];
+        Document[] documents = new Document[3];
+        documents[0] = new Book("Rowlings", "Harry Poter");
+        documents[2] = new Book("Tolkien", "LordOfTheRingis");
+        documents[1] = new Email("Susi", "Bewerbung", "KuhleSache");
 
-        strings[i] = readBook(strings);
-        readEmail(strings);
+        int cmail = 0;
+        int cbooks = 0;
 
+        for (int i = 0; i < documents.length; i++) {
+            if (documents[i] instanceof Email){
+                cmail++;
+                System.out.println(documents[i].toString());
+            } else if(documents[i] instanceof Book){
+                cbooks++;
+                System.out.println(documents[i].toString());
+            }
+        }
+
+        System.out.println("\nAnzahl E-Mails: "+ cmail);
+        System.out.println("Anzahl Books: "+ cbooks);
+
+
+       /* for (Document document : documents) {
+            System.out.println(document);
+        }*/
     }
-
-    public static void readBook(String[] strings){
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Buch ");
-        System.out.println("=====");
-        System.out.printf("Name des Buches: ");
-        Book.setTitle(scanner.next());
-        System.out.printf("Name des Authors: ");
-        Book.setAuthor(scanner.next());
-    }
-
-    public static void readEmail(String[] strings){
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Email: ");
-        System.out.println("=======");
-        System.out.printf("Name des Empfängers: ");
-        Email.setTo(scanner.next());
-        System.out.printf("Betreff: ");
-        Email.setSubject(scanner.next());
-    }
-
 }

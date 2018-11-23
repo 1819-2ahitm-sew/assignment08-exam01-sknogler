@@ -1,38 +1,26 @@
 package at.htl.exam01.document;
 
 public class Email extends Document{
-    private static String to;
-    private static String subject;
 
-    public Email(String to){
+    protected String subject;
+    protected String to;
+
+    public Email(String author, String subject, String to) {
         super(author);
+
+        this.subject = subject;
         this.to = to;
     }
 
-    public Email(){
-    }
-    @Override
-    public String toString() {
-        String string = "Email: "+ to + ", "+ subject;
-        return string;
-    }
-
-
-    //region GETTER AND SETTER
-    public static String getSubject() {
+    public String getSubject() {
         return subject;
     }
 
-    public static void setSubject(String subject) {
-        Email.subject = subject;
-    }
-
-    public static String getTo() {
+    public String getTo() {
         return to;
     }
-    public static void setTo(String to) {
-        Email.to = to;
+    @Override
+    public String toString() {
+        return "Email: " + this.subject + " von " + getAuthor() + " an " + this.to;
     }
-
-    //endregion
 }
